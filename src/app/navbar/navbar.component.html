@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img class="rounded-pill" height="50px" width="50px" src="../assets/img/recyclage.jpg" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/', 'About']">About us</a>
+      </li>
+      <li *ngIf="lc" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" [routerLink]="['/','Dashbord']">My account</a>
+          <a class="dropdown-item" [routerLink]="['/','Info']">Info container</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/','stat']">General stat</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <p class="my-2 my-sm-0 mr-3">
+
+        <a *ngIf="!lc" id="ins2" [routerLink]='["/", "Entry"]'>
+         <img id="inscription" class="rounded-circle" width="50px" height="50px" src="../../assets/img/referer.png" >
+        </a>
+        <span *ngIf="lc" id="ins2">
+          <div class="container d-flex justify-content-center">
+            <div class="d-flex flex-column">
+              <div>
+                <img class="rounded-circle" src="../../assets/img/welcome2.gif" width="60px" height="60px" />
+              </div>
+              <div class="ml-1 mt-1">
+                <a [routerLink]="['/','Logout']" >Logout</a>
+              </div>
+            </div>
+          </div>
+        </span>
+      </p>
+    </form>
+  </div>
+</nav>
