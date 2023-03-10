@@ -25,14 +25,25 @@
           <a class="dropdown-item" [routerLink]="['/','stat']">General stat</a>
         </div>
       </li>
+      <li *ngIf="adminlc" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" [routerLink]="['/','Client']">Info client</a>
+          <a class="dropdown-item" [routerLink]="['/','Employe']">Info employee</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/','stat']">General stat</a>
+        </div>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <p class="my-2 my-sm-0 mr-3">
 
-        <a *ngIf="!lc" id="ins2" [routerLink]='["/", "Entry"]'>
+        <a *ngIf="!lc && !adminlc" id="ins2" [routerLink]='["/", "Entry"]'>
          <img id="inscription" class="rounded-circle" width="50px" height="50px" src="../../assets/img/referer.png" >
         </a>
-        <span *ngIf="lc" id="ins2">
+        <span *ngIf="lc || adminlc" id="ins2">
           <div class="container d-flex justify-content-center">
             <div class="d-flex flex-column">
               <div>

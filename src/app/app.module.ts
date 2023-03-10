@@ -15,6 +15,8 @@ import { LogoutComponent } from './logout/Logout.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { InfoComponent } from './info/info.component';
 import { EntryComponent } from './entry/entry.component';
+import { ClientComponent } from './clients/client.component';
+import { EmployeComponent } from './employe/employe.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { EntryComponent } from './entry/entry.component';
     LogoutComponent,
     InfoComponent,
     DashbordComponent,
-    EntryComponent
+    EntryComponent,
+    ClientComponent,
+    EmployeComponent
   ],
   imports: [
     BrowserModule,

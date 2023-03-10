@@ -8,9 +8,11 @@ import { Component, ElementRef, OnInit } from "@angular/core";
 export class NavbarComponent implements OnInit
 {
   lc:boolean = false
+  adminlc:boolean = false
   ngOnInit(): void
   {
     this.lc = localStorage.getItem('Name') == 'Billy'
+    this.adminlc = localStorage.getItem('Name') == 'Admin'
   }
 
 }

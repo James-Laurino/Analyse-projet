@@ -11,6 +11,8 @@ import { LogoutComponent } from './logout/Logout.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { InfoComponent } from './info/info.component';
 import { EntryComponent } from './entry/entry.component';
+import { ClientComponent } from './clients/client.component';
+import { EmployeComponent } from './employe/employe.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
@@ -23,6 +25,8 @@ const routes: Routes = [
   {path:"Dashbord", component:DashbordComponent},
   {path:"Info", component:InfoComponent},
   {path:"Entry", component:EntryComponent},
+  {path:"Client", component:ClientComponent},
+  {path:"Employe", component:EmployeComponent},
 
 ];
 

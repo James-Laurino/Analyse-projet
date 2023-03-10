@@ -1,0 +1,46 @@
+<navbar-app></navbar-app>
+<div class="mt-3 container d-flex justify-content-center">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Ville</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="!delUser.includes(1)">
+        <th scope="row">1</th>
+        <td>Otto</td>
+        <td>Man</td>
+        <td>Bruxelles</td>
+        <td>
+            <button (click)="del(1)" class="btn btn-danger mr-3">Delete</button>
+            <button class="btn btn-warning">Update</button>
+        </td>
+      </tr>
+      <tr *ngIf="!delUser.includes(2)">
+        <th scope="row">2</th>
+        <td>Aude</td>
+        <td>Javel</td>
+        <td>Wavre</td>
+        <td>
+          <button (click)="del(2)" class="btn btn-danger mr-3">Delete</button>
+          <button class="btn btn-warning">Update</button>
+      </td>
+      </tr>
+      <tr *ngIf="!delUser.includes(3)">
+        <th scope="row">3</th>
+        <td>Paul</td>
+        <td>Emploi</td>
+        <td>Genappe</td>
+        <td>
+          <button (click)="del(3)" class="btn btn-danger mr-3">Delete</button>
+          <button class="btn btn-warning">Update</button>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
