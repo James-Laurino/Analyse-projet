@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 export class EmployeComponent
 {
   delUser:number[] = []
+  updateUser:boolean = false
 
   del(event:any)
   {

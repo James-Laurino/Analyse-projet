@@ -13,6 +13,7 @@ import { InfoComponent } from './info/info.component';
 import { EntryComponent } from './entry/entry.component';
 import { ClientComponent } from './clients/client.component';
 import { EmployeComponent } from './employe/employe.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:"Entry", component:EntryComponent},
   {path:"Client", component:ClientComponent},
   {path:"Employe", component:EmployeComponent},
+  {path:"Contact", component:ContactComponent},
 
 ];
 

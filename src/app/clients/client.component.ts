@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 export class ClientComponent
 {
   delUser:number[] = []
-
+  updateUser:boolean = false
   del(event:any)
   {
     Swal.fire({
