@@ -18,6 +18,7 @@ import { EntryComponent } from './entry/entry.component';
 import { ClientComponent } from './clients/client.component';
 import { EmployeComponent } from './employe/employe.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ContactComponent } from './contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
