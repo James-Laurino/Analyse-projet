@@ -13,6 +13,58 @@ export class EmployeComponent implements OnInit
   fnameEmployee:string =''
   lnameEmployee:string =''
   statutEmployee:string =''
+  isAdd:boolean = false;
+
+  mailEmployeAdd:string = ''
+  passEmployeAdd:string = ''
+  firstNameEmployeAdd:string = ''
+  LastNameEmployeAdd:string = ''
+  statutEmployeAdd:string = ''
+
+  mailAdd(event:any)
+  {
+    this.mailEmployeAdd =event.target.value
+  }
+
+  passAdd(event:any)
+  {
+    this.passEmployeAdd =event.target.value
+  }
+
+  firstNameAdd(event:any)
+  {
+    this.firstNameEmployeAdd =event.target.value
+  }
+
+  lastNameAdd(event:any)
+  {
+    this.LastNameEmployeAdd =event.target.value
+  }
+
+  statutAdd(event:any)
+  {
+    this.statutEmployeAdd =event.target.value
+  }
+
+  addNewOne()
+  {
+    this.isAdd = true
+  }
+
+  isAddedTo()
+  {
+    let id:number|undefined = 0
+    this.employees.forEach((e,i) =>
+    {
+      id =e.id
+    })
+
+    id = id + 1
+
+    this.employees.push(new Employee(id,this.firstNameEmployeAdd, this.LastNameEmployeAdd, this.statutEmployeAdd,false))
+    this.isAdd = false;
+  }
+
   ngOnInit(): void
   {
     this.employees.push(new Employee(1,"Otto", "Man", "Operator",false))
