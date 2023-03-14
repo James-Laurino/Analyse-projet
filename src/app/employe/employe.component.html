@@ -1,6 +1,10 @@
 <navbar-app></navbar-app>
-<div class="mt-3 mb-3 container d-flex justify-content-start">
+<div *ngIf="isAdd == false" class="mt-3 mb-3 container d-flex justify-content-start">
   <h3 class="text-warning">Liste des employees</h3>
+</div>
+
+<div *ngIf="isAdd == true" class="mt-3 mb-3 container d-flex justify-content-start">
+  <h3 class="text-warning">Ajouter des employees</h3>
 </div>
 
 <span *ngIf="isAdd == false; else isAdded">
@@ -31,11 +35,12 @@
           </ng-container>
           <ng-template #elseBlock>
               <th  scope="row">{{item.id}}</th>
-              <td> <input type="text" value="" (keyup)="fName($event)" class="form-control" [(ngModel)]="item.firstname" /> </td>
-              <td > <input type="text" value="" (keyup)="LName($event)" class="form-control" [(ngModel)]="item.lastname" /> </td>
-              <td ><input type="text" value="" (keyup)="Statut($event)" class="form-control"  [(ngModel)]="item.status"/></td>
+              <td> <input type="text"  (keyup)="fName($event)" class="form-control" [(ngModel)]="item.firstname" /> </td>
+              <td > <input type="text"  (keyup)="LName($event)" class="form-control" [(ngModel)]="item.lastname" /> </td>
+              <td ><input type="text"  (keyup)="Statut($event)" class="form-control"  [(ngModel)]="item.status"/></td>
               <td >
-                  <button (click)="editChangement(item.id)" class="btn btn-success">Commit</button>
+                  <a (click)="editChangement(item.id)" class="btn btn-success mr-3">Commit</a>
+                  <a (click)="back(item.id)" class="btn btn-danger" >Cancel</a>
               </td>
           </ng-template>
         </tr>
@@ -73,7 +78,7 @@
         </div>
 
         <div class="container d-flex justify-content-center">
-          <a (click)="isAddedTo()" [routerLink]='["/","Employe"]' class="btn btn-primary">Commit</a>
+          <a (click)="isAddedTo()" [routerLink]='["/","Employe"]' class="btn btn-primary mr-3">Commit</a>
         </div>
       </form>
     </div>
@@ -81,7 +86,6 @@
 </ng-template>
 
 <div *ngIf="isAdd == false" class="mt-3 container d-flex justify-content-start">
-  <div>
-    <button (click)="addNewOne()" class="btn btn-info" >Add a new employee</button>
-  </div>
+    <button (click)="addNewOne()" class="btn btn-info mr-3" >Add a new employee</button>
 </div>
+

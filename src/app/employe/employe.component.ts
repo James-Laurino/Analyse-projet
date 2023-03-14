@@ -88,7 +88,7 @@ export class EmployeComponent implements OnInit
     this.statutEmployee = event.target.value;
   }
 
-  editChangement(event:any)
+  back(event:any)
   {
     this.employees.forEach((e,i) =>
     {
@@ -98,6 +98,28 @@ export class EmployeComponent implements OnInit
         e.lastname = this.lnameEmployee;
         e.status = this.statutEmployee;
         e.isUpdate = false;
+      }
+    })
+  }
+
+  editChangement(event:any)
+  {
+
+    this.employees.forEach((e,i) =>
+    {
+      if(e.id == event)
+      {
+        if(this.fnameEmployee == "")
+        {
+          e.isUpdate = false;
+        }
+        else
+        {
+          e.firstname = this.fnameEmployee;
+          e.lastname = this.lnameEmployee;
+          e.status = this.statutEmployee;
+          e.isUpdate = false;
+        }
       }
     })
   }
